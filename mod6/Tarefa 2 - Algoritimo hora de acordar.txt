@@ -1,0 +1,14 @@
+INICIO
+    1 - Abro os olhos
+    2 - Desligo o despertador
+    3 - Levanto da cama
+    4 - Se a porta estiver fechada:
+        1 - Colocar a mão na fechadura
+        2 - Girar a maçaneta
+        3 - Puxar a porta
+    5 - Tomar café da manhã
+    6 - Colocar comida para minha cachorra
+    7 - Tomar banho
+    8 - Ligar o computador
+    9 - Começar a trabalhar
+FIM
