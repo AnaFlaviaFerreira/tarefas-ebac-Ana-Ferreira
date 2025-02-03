@@ -33,13 +33,13 @@ public class ClienteServiceTest {
 
     @Test
     public void pesquisarCliente() {
-        Cliente clienteConsultado = clienteService.buscarPorCPF(cliente.getCpf());
+        Cliente clienteConsultado = clienteService.consultar(cliente.getCpf());
         Assert.assertNotNull(clienteConsultado);
     }
 
     @Test
     public void salvarCliente() throws TipoChaveNaoEncontradaException {
-       Boolean retorno = clienteService.salvar(cliente);
+       Boolean retorno = clienteService.cadastrar(cliente);
        Assert.assertTrue(retorno);
     }
 
