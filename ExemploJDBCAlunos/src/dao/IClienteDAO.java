@@ -14,4 +14,6 @@ public interface IClienteDAO {
     public List<Cliente> buscarTodos() throws Exception;
 
     public Integer alterar(Cliente cliente) throws Exception;
+
+    public Integer excluirTodos() throws Exception;
 }
