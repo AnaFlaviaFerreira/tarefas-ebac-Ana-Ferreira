@@ -1,7 +1,4 @@
-import dao.ClienteDAO;
-import dao.IClienteDAO;
-import dao.IVendaDAO;
-import dao.VendaDAO;
+import dao.*;
 import dao.generic.jdbc.ConnectionFactory;
 import domain.Cliente;
 import domain.Produto;
