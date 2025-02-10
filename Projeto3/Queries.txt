@@ -95,3 +95,37 @@ SELECT PQ.ID, PQ.QUANTIDADE, PQ.VALOR_TOTAL,
 P.ID AS ID_PRODUTO, P.CODIGO, P.NOME, P.DESCRICAO, P.VALOR
 FROM TB_PRODUTO_QUANTIDADE PQ
 INNER JOIN TB_PRODUTO P ON P.ID = PQ.ID_PRODUTO_FK;
+
+==============================================================================================
+
+Tarefa:
+==============================================
+
+ALTER TABLE IF EXISTS tb_cliente
+    ADD COLUMN status boolean;
+
+ALTER TABLE IF EXISTS tb_produto
+    ADD COLUMN status boolean;
+
+CREATE TABLE tb_estoque (
+	id bigint PRIMARY KEY,
+	id_produto_fk  bigint not null,
+	FOREIGN KEY (id_produto_fk) REFERENCES tb_produto(id),
+	qtd_original int not null,
+	qtd_em_estoque int not null
+);
+
+create sequence sq_estoque
+start 1
+increment 1
+owned by tb_estoque.id;
+
+SELECT P.*, E.ID AS ID_ESTOQUE,
+E.QTD_ORIGINAL, E.QTD_EM_ESTOQUE
+FROM TB_PRODUTO P
+INNER JOIN TB_ESTOQUE E ON E.ID_PRODUTO_FK = P.ID
+
+SELECT E.ID, E.QTD_ORIGINAL, E.QTD_EM_ESTOQUE,
+P.ID AS ID_PRODUTO, P.CODIGO, P.NOME, P.DESCRICAO, P.VALOR, P.STATUS
+FROM TB_ESTOQUE E
+INNER JOIN TB_PRODUTO P ON P.ID = E.ID_PRODUTO_FK

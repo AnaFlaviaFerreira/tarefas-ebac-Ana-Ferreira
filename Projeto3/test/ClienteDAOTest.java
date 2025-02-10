@@ -44,6 +44,7 @@ public class ClienteDAOTest {
         cliente.setEstado("SP");
         cliente.setNumero(10);
         cliente.setTel(1199999999L);
+        cliente.setStatus(true);
         clienteDao.cadastrar(cliente);
 
         Cliente clienteConsultado = clienteDao.consultar(cliente.getCpf());
@@ -62,6 +63,7 @@ public class ClienteDAOTest {
         cliente.setEstado("SP");
         cliente.setNumero(10);
         cliente.setTel(1199999999L);
+        cliente.setStatus(true);
         Boolean retorno = clienteDao.cadastrar(cliente);
         assertTrue(retorno);
 
@@ -82,6 +84,7 @@ public class ClienteDAOTest {
         cliente.setEstado("SP");
         cliente.setNumero(10);
         cliente.setTel(1199999999L);
+        cliente.setStatus(true);
         Boolean retorno = clienteDao.cadastrar(cliente);
         assertTrue(retorno);
 
@@ -103,6 +106,7 @@ public class ClienteDAOTest {
         cliente.setEstado("SP");
         cliente.setNumero(10);
         cliente.setTel(1199999999L);
+        cliente.setStatus(true);
         Boolean retorno = clienteDao.cadastrar(cliente);
         assertTrue(retorno);
 
@@ -131,6 +135,7 @@ public class ClienteDAOTest {
         cliente.setEstado("SP");
         cliente.setNumero(10);
         cliente.setTel(1199999999L);
+        cliente.setStatus(true);
         Boolean retorno = clienteDao.cadastrar(cliente);
         assertTrue(retorno);
 
@@ -142,6 +147,7 @@ public class ClienteDAOTest {
         cliente1.setEstado("SP");
         cliente1.setNumero(10);
         cliente1.setTel(1199999999L);
+        cliente1.setStatus(true);
         Boolean retorno1 = clienteDao.cadastrar(cliente1);
         assertTrue(retorno1);
 
@@ -161,5 +167,22 @@ public class ClienteDAOTest {
         Collection<Cliente> list1 = clienteDao.buscarTodos();
         assertTrue(list1 != null);
         assertTrue(list1.size() == 0);
+    }
+
+    @Test
+    public void verificarClienteAtivo() throws DAOException, TipoChaveNaoEncontradaException, MaisDeUmRegistroException, TableException {
+        Cliente cliente = new Cliente();
+        cliente.setCpf(56565656565L);
+        cliente.setNome("Rodrigo");
+        cliente.setCidade("São Paulo");
+        cliente.setEnd("End");
+        cliente.setEstado("SP");
+        cliente.setNumero(10);
+        cliente.setTel(1199999999L);
+        cliente.setStatus(true);
+        clienteDao.cadastrar(cliente);
+
+        Cliente clienteConsultado = clienteDao.consultar(cliente.getCpf());
+        assertTrue(clienteConsultado.getStatus());
     }
 }

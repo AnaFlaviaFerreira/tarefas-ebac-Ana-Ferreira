@@ -32,6 +32,9 @@ public class Cliente implements Persistente {
     @ColunaTabela(dbName = "estado", setJavaName = "setEstado")
     private String estado;
 
+    @ColunaTabela(dbName = "status", setJavaName = "setStatus")
+    private Boolean status;
+
     @Override
     public Long getId() {
         return id;
@@ -96,5 +99,13 @@ public class Cliente implements Persistente {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 }

@@ -1,6 +1,7 @@
 import dao.*;
 import dao.generic.jdbc.ConnectionFactory;
 import domain.Cliente;
+import domain.Estoque;
 import domain.Produto;
 import domain.Venda;
 import exceptions.DAOException;
@@ -29,20 +30,26 @@ public class VendaDAOTest {
 
     private IProdutoDAO produtoDao;
 
+    private IEstoqueDAO estoqueDAO;
+
     private Cliente cliente;
 
     private Produto produto;
+
+    private Estoque estoque;
 
     public VendaDAOTest() {
         vendaDao = new VendaDAO();
         clienteDao = new ClienteDAO();
         produtoDao = new ProdutoDAO();
+        estoqueDAO = new EstoqueDAO();
     }
 
     @Before
     public void init() throws TipoChaveNaoEncontradaException, MaisDeUmRegistroException, TableException, DAOException {
         this.cliente = cadastrarCliente();
         this.produto = cadastrarProduto("A1", BigDecimal.TEN);
+        this.estoque = cadastrarEstoque(10);
     }
 
     @After
@@ -56,6 +63,7 @@ public class VendaDAOTest {
     private void excluirProdutos() throws DAOException {
         Collection<Produto> list = this.produtoDao.buscarTodos();
         for (Produto prod : list) {
+            this.estoqueDAO.excluir(prod.getId());
             this.produtoDao.excluir(prod.getCodigo());
         }
     }
@@ -272,6 +280,7 @@ public class VendaDAOTest {
         produto.setDescricao("Produto 1");
         produto.setNome("Produto 1");
         produto.setValor(valor);
+        produto.setStatus(false);
         produtoDao.cadastrar(produto);
         return produto;
     }
@@ -285,8 +294,19 @@ public class VendaDAOTest {
         cliente.setEstado("SP");
         cliente.setNumero(10);
         cliente.setTel(1199999999L);
+        cliente.setStatus(true);
         clienteDao.cadastrar(cliente);
         return cliente;
+    }
+
+    private Estoque cadastrarEstoque(int quantidade) throws MaisDeUmRegistroException, DAOException, TableException, TipoChaveNaoEncontradaException {
+        Produto produtoDB = this.produtoDao.consultar(produto.getCodigo());
+        Estoque estoque = new Estoque();
+        estoque.setProduto(produtoDB);
+        estoque.setQuatidadeEmEstoque(quantidade);
+        estoque.setQuantidadeOriginal(quantidade);
+        estoqueDAO.cadastrar(estoque);
+        return estoque;
     }
 
     private Venda criarVenda(String codigo) {
@@ -296,6 +316,7 @@ public class VendaDAOTest {
         venda.setCliente(this.cliente);
         venda.setStatus(Venda.Status.INICIADA);
         venda.adicionarProduto(this.produto, 2);
+        venda.adicionarEstoque(this.estoque,2);
         return venda;
     }
 

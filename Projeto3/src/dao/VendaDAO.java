@@ -3,6 +3,7 @@ package dao;
 import dao.factory.ProdutoQuantidadeFactory;
 import dao.factory.VendaFactory;
 import dao.generic.GenericDAO;
+import domain.Estoque;
 import domain.ProdutoQuantidade;
 import domain.Venda;
 import exceptions.DAOException;
@@ -159,7 +160,7 @@ public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {
         try {
             StringBuilder sbProd = new StringBuilder();
             sbProd.append("SELECT PQ.ID, PQ.QUANTIDADE, PQ.VALOR_TOTAL, ");
-            sbProd.append("P.ID AS ID_PRODUTO, P.CODIGO, P.NOME, P.DESCRICAO, P.VALOR ");
+            sbProd.append("P.ID AS ID_PRODUTO, P.CODIGO, P.NOME, P.DESCRICAO, P.VALOR, P.STATUS ");
             sbProd.append("FROM TB_PRODUTO_QUANTIDADE PQ ");
             sbProd.append("INNER JOIN TB_PRODUTO P ON P.ID = PQ.ID_PRODUTO_FK ");
             sbProd.append("WHERE PQ.ID_VENDA_FK = ?");
@@ -207,7 +208,7 @@ public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {
     private StringBuilder sqlBaseSelect() {
         StringBuilder sb = new StringBuilder();
         sb.append("SELECT V.ID AS ID_VENDA, V.CODIGO, V.VALOR_TOTAL, V.DATA_VENDA, V.STATUS_VENDA, ");
-        sb.append("C.ID AS ID_CLIENTE, C.NOME, C.CPF, C.TEL, C.ENDERECO, C.NUMERO, C.CIDADE, C.ESTADO ");
+        sb.append("C.ID AS ID_CLIENTE, C.NOME, C.CPF, C.TEL, C.ENDERECO, C.NUMERO, C.CIDADE, C.ESTADO, C.STATUS ");
         sb.append("FROM TB_VENDA V ");
         sb.append("INNER JOIN TB_CLIENTE C ON V.ID_CLIENTE_FK = C.ID ");
         return sb;
@@ -235,6 +236,12 @@ public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {
                     stm = connection.prepareStatement(getQueryInsercaoProdQuant());
                     setParametrosQueryInsercaoProdQuant(stm, entity, prod);
                     rowsAffected = stm.executeUpdate();
+                }
+
+                //Estoque
+                IEstoqueDAO estoqueDAO = new EstoqueDAO();
+                for (Estoque est : entity.getEstoques()) {
+                    estoqueDAO.alterar(est);
                 }
 
 

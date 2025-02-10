@@ -38,7 +38,11 @@ public class Venda implements Persistente {
     private Cliente cliente; //associando um objeto a outro. Onde seria a fk
 
     //@ColunaTabela(dbName = "id", setJavaName = "setId")
+    //não é uma coluna do banco de dados
     private Set<ProdutoQuantidade> produtos; // set é utilizado para não poder repetir os itens
+
+    //não é uma coluna no banco de dados
+    private Set<Estoque> estoques;
 
     @ColunaTabela(dbName = "valor_total", setJavaName = "setValorTotal")
     private BigDecimal valorTotal;
@@ -51,6 +55,7 @@ public class Venda implements Persistente {
 
     public Venda() {
         produtos = new HashSet<>();
+        estoques = new HashSet<>();
     }
 
     public String getCodigo() {
@@ -71,6 +76,50 @@ public class Venda implements Persistente {
 
     public Set<ProdutoQuantidade> getProdutos() {
         return produtos;
+    }
+
+    public BigDecimal getValorTotal() {
+        return valorTotal;
+    }
+
+    public Instant getDataVenda() {
+        return dataVenda;
+    }
+
+    public void setDataVenda(Instant dataVenda) {
+        this.dataVenda = dataVenda;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setValorTotal(BigDecimal valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
+    public void setProdutos(Set<ProdutoQuantidade> produtos) {
+        this.produtos = produtos;
+    }
+
+    public Set<Estoque> getEstoques() {
+        return estoques;
+    }
+
+    public void setEstoques(Set<Estoque> estoques) {
+        this.estoques = estoques;
     }
 
     public void adicionarProduto(Produto produto, Integer quantidade) {
@@ -136,42 +185,32 @@ public class Venda implements Persistente {
         this.valorTotal = valorTotal;
     }
 
-    public BigDecimal getValorTotal() {
-        return valorTotal;
+    public void adicionarEstoque(Estoque estoque, Integer quantidade) {
+        validarStatus();
+        Optional<Estoque> op = estoques.stream().filter(filter -> filter.getProduto().getId().equals(estoque.getProduto().getId())).findAny();
+
+        if(op.isPresent()) {
+            Estoque est = op.get();
+            est.adicionar(quantidade);
+        } else {
+            estoque.adicionar(quantidade);
+            estoques.add(estoque);
+        }
     }
 
-    public Instant getDataVenda() {
-        return dataVenda;
+    public void removerEstoque(Estoque estoque, Integer quantidade) {
+        validarStatus();
+        Optional<Estoque> op =
+                estoques.stream().filter(filter -> filter.getProduto().getId().equals(estoque.getProduto().getId())).findAny();
+
+        if (op.isPresent()) {
+            Estoque produtpQtd = op.get();
+            if (produtpQtd.getQuatidadeEmEstoque()>quantidade) {
+                produtpQtd.remover(quantidade);
+            } else {
+                estoques.remove(op.get());
+            }
+
+        }
     }
-
-    public void setDataVenda(Instant dataVenda) {
-        this.dataVenda = dataVenda;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setValorTotal(BigDecimal valorTotal) {
-        this.valorTotal = valorTotal;
-    }
-
-    public void setProdutos(Set<ProdutoQuantidade> produtos) {
-        this.produtos = produtos;
-    }
-
-
-
 }
