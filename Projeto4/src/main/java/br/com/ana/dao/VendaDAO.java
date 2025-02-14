@@ -15,19 +15,19 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import br.com.rpires.dao.factory.ProdutoQuantidadeFactory;
-import br.com.rpires.dao.factory.VendaFactory;
-import br.com.rpires.dao.generic.GenericDAO;
-import br.com.rpires.domain.ProdutoQuantidade;
-import br.com.rpires.domain.Venda;
-import br.com.rpires.domain.Venda.Status;
-import br.com.rpires.exceptions.DAOException;
-import br.com.rpires.exceptions.MaisDeUmRegistroException;
-import br.com.rpires.exceptions.TableException;
-import br.com.rpires.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.ana.dao.factory.ProdutoQuantidadeFactory;
+import main.java.br.com.ana.dao.factory.VendaFactory;
+import main.java.br.com.ana.dao.generic.GenericDAO;
+import main.java.br.com.ana.domain.ProdutoQuantidade;
+import main.java.br.com.ana.domain.Venda;
+import main.java.br.com.ana.domain.Venda.Status;
+import main.java.br.com.ana.exceptions.DAOException;
+import main.java.br.com.ana.exceptions.MaisDeUmRegistroException;
+import main.java.br.com.ana.exceptions.TableException;
+import main.java.br.com.ana.exceptions.TipoChaveNaoEncontradaException;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {

@@ -4,7 +4,7 @@
 package main.java.br.com.ana.exceptions;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 public class MaisDeUmRegistroException extends Exception {

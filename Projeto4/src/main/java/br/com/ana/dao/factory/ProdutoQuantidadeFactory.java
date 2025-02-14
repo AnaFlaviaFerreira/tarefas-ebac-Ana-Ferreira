@@ -6,11 +6,11 @@ package main.java.br.com.ana.dao.factory;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import br.com.rpires.domain.Produto;
-import br.com.rpires.domain.ProdutoQuantidade;
+import main.java.br.com.ana.domain.Produto;
+import main.java.br.com.ana.domain.ProdutoQuantidade;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 public class ProdutoQuantidadeFactory {

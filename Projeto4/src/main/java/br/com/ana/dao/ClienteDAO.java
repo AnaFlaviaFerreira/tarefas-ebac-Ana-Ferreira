@@ -6,11 +6,11 @@ package main.java.br.com.ana.dao;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import br.com.rpires.dao.generic.GenericDAO;
-import br.com.rpires.domain.Cliente;
+import main.java.br.com.ana.dao.generic.GenericDAO;
+import main.java.br.com.ana.domain.Cliente;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 public class ClienteDAO extends GenericDAO<Cliente, Long> implements IClienteDAO {

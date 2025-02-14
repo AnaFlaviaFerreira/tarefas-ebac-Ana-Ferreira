@@ -14,16 +14,16 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.rpires.dao.IProdutoDAO;
-import br.com.rpires.dao.ProdutoDAO;
-import br.com.rpires.domain.Produto;
-import br.com.rpires.exceptions.DAOException;
-import br.com.rpires.exceptions.MaisDeUmRegistroException;
-import br.com.rpires.exceptions.TableException;
-import br.com.rpires.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.ana.dao.IProdutoDAO;
+import main.java.br.com.ana.dao.ProdutoDAO;
+import main.java.br.com.ana.domain.Produto;
+import main.java.br.com.ana.exceptions.DAOException;
+import main.java.br.com.ana.exceptions.MaisDeUmRegistroException;
+import main.java.br.com.ana.exceptions.TableException;
+import main.java.br.com.ana.exceptions.TipoChaveNaoEncontradaException;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 public class ProdutoDAOTest {

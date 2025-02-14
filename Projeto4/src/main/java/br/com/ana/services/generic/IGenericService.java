@@ -6,12 +6,12 @@ package main.java.br.com.ana.services.generic;
 import java.io.Serializable;
 import java.util.Collection;
 
-import br.com.rpires.dao.Persistente;
-import br.com.rpires.exceptions.DAOException;
-import br.com.rpires.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.ana.dao.Persistente;
+import main.java.br.com.ana.exceptions.DAOException;
+import main.java.br.com.ana.exceptions.TipoChaveNaoEncontradaException;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 public interface IGenericService <T extends Persistente, E extends Serializable> {

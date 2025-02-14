@@ -1,7 +1,7 @@
 package main.java.br.com.ana.dao;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  * Classe que representa todas as entidades ou objetos da aplicação que seram salvas no banco de dados
  */

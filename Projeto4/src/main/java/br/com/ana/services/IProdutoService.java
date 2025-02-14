@@ -3,11 +3,11 @@
  */
 package main.java.br.com.ana.services;
 
-import br.com.rpires.domain.Produto;
-import br.com.rpires.services.generic.IGenericService;
+import main.java.br.com.ana.domain.Produto;
+import main.java.br.com.ana.services.generic.IGenericService;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 public interface IProdutoService extends IGenericService<Produto, String> {

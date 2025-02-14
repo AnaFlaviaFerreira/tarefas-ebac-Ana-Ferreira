@@ -21,24 +21,24 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.rpires.dao.ClienteDAO;
-import br.com.rpires.dao.IClienteDAO;
-import br.com.rpires.dao.IProdutoDAO;
-import br.com.rpires.dao.IVendaDAO;
-import br.com.rpires.dao.ProdutoDAO;
-import br.com.rpires.dao.VendaDAO;
-import br.com.rpires.dao.generic.jdbc.ConnectionFactory;
-import br.com.rpires.domain.Cliente;
-import br.com.rpires.domain.Produto;
-import br.com.rpires.domain.Venda;
-import br.com.rpires.domain.Venda.Status;
-import br.com.rpires.exceptions.DAOException;
-import br.com.rpires.exceptions.MaisDeUmRegistroException;
-import br.com.rpires.exceptions.TableException;
-import br.com.rpires.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.ana.dao.ClienteDAO;
+import main.java.br.com.ana.dao.IClienteDAO;
+import main.java.br.com.ana.dao.IProdutoDAO;
+import main.java.br.com.ana.dao.IVendaDAO;
+import main.java.br.com.ana.dao.ProdutoDAO;
+import main.java.br.com.ana.dao.VendaDAO;
+import main.java.br.com.ana.dao.generic.jdbc.ConnectionFactory;
+import main.java.br.com.ana.domain.Cliente;
+import main.java.br.com.ana.domain.Produto;
+import main.java.br.com.ana.domain.Venda;
+import main.java.br.com.ana.domain.Venda.Status;
+import main.java.br.com.ana.exceptions.DAOException;
+import main.java.br.com.ana.exceptions.MaisDeUmRegistroException;
+import main.java.br.com.ana.exceptions.TableException;
+import main.java.br.com.ana.exceptions.TipoChaveNaoEncontradaException;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 public class VendaDAOTest {

@@ -11,16 +11,16 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.rpires.dao.ClienteDAO;
-import br.com.rpires.dao.IClienteDAO;
-import br.com.rpires.domain.Cliente;
-import br.com.rpires.exceptions.DAOException;
-import br.com.rpires.exceptions.MaisDeUmRegistroException;
-import br.com.rpires.exceptions.TableException;
-import br.com.rpires.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.ana.dao.ClienteDAO;
+import main.java.br.com.ana.dao.IClienteDAO;
+import main.java.br.com.ana.domain.Cliente;
+import main.java.br.com.ana.exceptions.DAOException;
+import main.java.br.com.ana.exceptions.MaisDeUmRegistroException;
+import main.java.br.com.ana.exceptions.TableException;
+import main.java.br.com.ana.exceptions.TipoChaveNaoEncontradaException;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 public class ClienteDAOTest {

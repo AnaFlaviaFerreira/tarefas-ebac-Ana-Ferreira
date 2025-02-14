@@ -6,12 +6,12 @@ package main.java.br.com.ana.dao.factory;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import br.com.rpires.domain.Cliente;
-import br.com.rpires.domain.Venda;
-import br.com.rpires.domain.Venda.Status;
+import main.java.br.com.ana.domain.Cliente;
+import main.java.br.com.ana.domain.Venda;
+import main.java.br.com.ana.domain.Venda.Status;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 public class VendaFactory {

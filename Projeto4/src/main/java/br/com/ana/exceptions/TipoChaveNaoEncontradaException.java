@@ -1,7 +1,7 @@
 package main.java.br.com.ana.exceptions;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  */
 public class TipoChaveNaoEncontradaException extends Exception {
 

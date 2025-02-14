@@ -3,11 +3,11 @@
  */
 package main.java.br.com.ana.dao;
 
-import br.com.rpires.dao.generic.IGenericDAO;
-import br.com.rpires.domain.Cliente;
+import main.java.br.com.ana.dao.generic.IGenericDAO;
+import main.java.br.com.ana.domain.Cliente;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 public interface IClienteDAO extends IGenericDAO<Cliente, Long> {

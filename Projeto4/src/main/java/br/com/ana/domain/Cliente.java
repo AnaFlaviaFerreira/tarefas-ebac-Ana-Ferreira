@@ -3,13 +3,13 @@
  */
 package main.java.br.com.ana.domain;
 
-import anotacao.ColunaTabela;
-import anotacao.Tabela;
-import anotacao.TipoChave;
-import br.com.rpires.dao.Persistente;
+import main.java.anotacao.ColunaTabela;
+import main.java.anotacao.Tabela;
+import main.java.anotacao.TipoChave;
+import main.java.br.com.ana.dao.Persistente;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 @Tabela("TB_CLIENTE")

@@ -3,13 +3,13 @@
  */
 package main.java.br.com.ana.services;
 
-import br.com.rpires.domain.Cliente;
-import br.com.rpires.exceptions.DAOException;
-import br.com.rpires.exceptions.TipoChaveNaoEncontradaException;
-import br.com.rpires.services.generic.IGenericService;
+import main.java.br.com.ana.domain.Cliente;
+import main.java.br.com.ana.exceptions.DAOException;
+import main.java.br.com.ana.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.ana.services.generic.IGenericService;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 public interface IClienteService extends IGenericService<Cliente, Long> {

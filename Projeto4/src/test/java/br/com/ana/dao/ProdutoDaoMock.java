@@ -5,11 +5,12 @@ package test.java.br.com.ana.dao;
 
 import java.util.Collection;
 
-import br.com.rpires.domain.Produto;
-import br.com.rpires.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.ana.dao.IProdutoDAO;
+import main.java.br.com.ana.domain.Produto;
+import main.java.br.com.ana.exceptions.TipoChaveNaoEncontradaException;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 public class ProdutoDaoMock implements IProdutoDAO {

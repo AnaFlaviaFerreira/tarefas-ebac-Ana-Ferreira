@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 public class ConnectionFactory {
@@ -34,7 +34,7 @@ public class ConnectionFactory {
 	private static Connection initConnection() {
         try {
             return DriverManager.getConnection(
-            		"jdbc:postgresql://localhost:5432/vendas_online_2", "postgres", "admin");
+            		"jdbc:postgresql://localhost:5432/vendas_online_2", "postgres", "12345");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

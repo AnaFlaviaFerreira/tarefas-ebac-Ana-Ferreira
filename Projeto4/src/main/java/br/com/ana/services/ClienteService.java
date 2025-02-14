@@ -3,16 +3,16 @@
  */
 package main.java.br.com.ana.services;
 
-import br.com.rpires.dao.IClienteDAO;
-import br.com.rpires.domain.Cliente;
-import br.com.rpires.exceptions.DAOException;
-import br.com.rpires.exceptions.MaisDeUmRegistroException;
-import br.com.rpires.exceptions.TableException;
-import br.com.rpires.exceptions.TipoChaveNaoEncontradaException;
-import br.com.rpires.services.generic.GenericService;
+import main.java.br.com.ana.dao.IClienteDAO;
+import main.java.br.com.ana.domain.Cliente;
+import main.java.br.com.ana.exceptions.DAOException;
+import main.java.br.com.ana.exceptions.MaisDeUmRegistroException;
+import main.java.br.com.ana.exceptions.TableException;
+import main.java.br.com.ana.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.ana.services.generic.GenericService;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 public class ClienteService extends GenericService<Cliente, Long> implements IClienteService {

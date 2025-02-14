@@ -9,16 +9,16 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.rpires.dao.IProdutoDAO;
-import br.com.rpires.dao.ProdutoDaoMock;
-import br.com.rpires.domain.Produto;
-import br.com.rpires.exceptions.DAOException;
-import br.com.rpires.exceptions.TipoChaveNaoEncontradaException;
-import br.com.rpires.services.IProdutoService;
-import br.com.rpires.services.ProdutoService;
+import main.java.br.com.ana.dao.IProdutoDAO;
+import test.java.br.com.ana.dao.ProdutoDaoMock;
+import main.java.br.com.ana.domain.Produto;
+import main.java.br.com.ana.exceptions.DAOException;
+import main.java.br.com.ana.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.ana.services.IProdutoService;
+import main.java.br.com.ana.services.ProdutoService;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 public class ProdutoServiceTest {

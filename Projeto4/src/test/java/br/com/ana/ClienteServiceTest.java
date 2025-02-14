@@ -7,16 +7,16 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.rpires.dao.ClienteDaoMock;
-import br.com.rpires.dao.IClienteDAO;
-import br.com.rpires.domain.Cliente;
-import br.com.rpires.exceptions.DAOException;
-import br.com.rpires.exceptions.TipoChaveNaoEncontradaException;
-import br.com.rpires.services.ClienteService;
-import br.com.rpires.services.IClienteService;
+import main.java.br.com.ana.dao.IClienteDAO;
+import main.java.br.com.ana.domain.Cliente;
+import main.java.br.com.ana.exceptions.DAOException;
+import main.java.br.com.ana.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.ana.services.ClienteService;
+import main.java.br.com.ana.services.IClienteService;
+import test.java.br.com.ana.dao.ClienteDaoMock;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 public class ClienteServiceTest {

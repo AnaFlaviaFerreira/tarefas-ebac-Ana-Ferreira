@@ -14,19 +14,19 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import anotacao.ColunaTabela;
-import anotacao.Tabela;
-import anotacao.TipoChave;
-import br.com.rpires.dao.Persistente;
-import br.com.rpires.dao.generic.jdbc.ConnectionFactory;
-import br.com.rpires.exceptions.DAOException;
-import br.com.rpires.exceptions.MaisDeUmRegistroException;
-import br.com.rpires.exceptions.TableException;
-import br.com.rpires.exceptions.TipoChaveNaoEncontradaException;
-import br.com.rpires.exceptions.TipoElementoNaoConhecidoException;
+import main.java.anotacao.ColunaTabela;
+import main.java.anotacao.Tabela;
+import main.java.anotacao.TipoChave;
+import main.java.br.com.ana.dao.Persistente;
+import main.java.br.com.ana.dao.generic.jdbc.ConnectionFactory;
+import main.java.br.com.ana.exceptions.DAOException;
+import main.java.br.com.ana.exceptions.MaisDeUmRegistroException;
+import main.java.br.com.ana.exceptions.TableException;
+import main.java.br.com.ana.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.ana.exceptions.TipoElementoNaoConhecidoException;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  * Classe genérica que implementa interface genérica com os métodos de CRUD
  */

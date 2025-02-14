@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  * Classe Singleton que garante que o <code>map</code> será único em toda a vita da aplicação.
  *

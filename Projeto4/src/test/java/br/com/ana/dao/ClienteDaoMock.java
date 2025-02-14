@@ -2,8 +2,9 @@ package test.java.br.com.ana.dao;
 
 import java.util.Collection;
 
-import br.com.rpires.domain.Cliente;
-import br.com.rpires.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.ana.dao.IClienteDAO;
+import main.java.br.com.ana.domain.Cliente;
+import main.java.br.com.ana.exceptions.TipoChaveNaoEncontradaException;
 
 public class ClienteDaoMock implements IClienteDAO {
 

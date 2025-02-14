@@ -3,12 +3,12 @@
  */
 package main.java.br.com.ana.services;
 
-import br.com.rpires.dao.IProdutoDAO;
-import br.com.rpires.domain.Produto;
-import br.com.rpires.services.generic.GenericService;
+import main.java.br.com.ana.dao.IProdutoDAO;
+import main.java.br.com.ana.domain.Produto;
+import main.java.br.com.ana.services.generic.GenericService;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 public class ProdutoService extends GenericService<Produto, String> implements IProdutoService {

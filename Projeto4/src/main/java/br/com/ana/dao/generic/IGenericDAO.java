@@ -1,16 +1,16 @@
 package main.java.br.com.ana.dao.generic;
 
-import br.com.rpires.dao.Persistente;
-import br.com.rpires.exceptions.DAOException;
-import br.com.rpires.exceptions.MaisDeUmRegistroException;
-import br.com.rpires.exceptions.TableException;
-import br.com.rpires.exceptions.TipoChaveNaoEncontradaException;
+import main.java.br.com.ana.dao.Persistente;
+import main.java.br.com.ana.exceptions.DAOException;
+import main.java.br.com.ana.exceptions.MaisDeUmRegistroException;
+import main.java.br.com.ana.exceptions.TableException;
+import main.java.br.com.ana.exceptions.TipoChaveNaoEncontradaException;
 
 import java.io.Serializable;
 import java.util.Collection;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  * Interface genérica para métodos de CRUD(Create, Read, Update and Delete)
  */

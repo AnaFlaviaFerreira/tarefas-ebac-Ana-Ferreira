@@ -5,11 +5,11 @@ package main.java.br.com.ana.domain;
 
 import java.math.BigDecimal;
 
-import anotacao.ColunaTabela;
-import anotacao.Tabela;
+import main.java.anotacao.ColunaTabela;
+import main.java.anotacao.Tabela;
 
 /**
- * @author rodrigo.pires
+ * @author ana
  *
  */
 @Tabela("TB_PRODUTO_QUANTIDADE")
